@@ -16,7 +16,6 @@ for row in ntuple:
     run=row.run
     lumi=row.lumi
     evt=row.evt
-    ##print run, lumi, evt
     e1=row.E1
     e2=row.E2
     e3=row.E3

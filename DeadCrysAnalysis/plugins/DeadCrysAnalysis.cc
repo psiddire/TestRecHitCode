@@ -304,7 +304,7 @@ DeadCrysAnalysis::analyze(const edm::Event& iEvent, const  edm::EventSetup & iSe
       float E_3x3=0;
       for ( size_t i = 0; i < v_id.size(); ++i ) {
 	float cryE= recHitEnergy( v_id[i], &recHitsEB );
-	EcalRecHitCollection::const_iterator jt = (&recHitsEB)->find( v_id[i] );
+	//EcalRecHitCollection::const_iterator jt = (&recHitsEB)->find( v_id[i] );
         E_3x3 += cryE;
 
 	if ( cryE <= 0.0 && idCurrent!=v_id[i] ) continue;
