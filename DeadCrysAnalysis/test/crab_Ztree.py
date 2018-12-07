@@ -8,7 +8,7 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'runZtree.py'
 config.JobType.maxMemoryMB = 2500
 config.section_("Data")
-config.Data.inputDataset = '/DoubleMuon/psiddire-ZMMDeadCh2018B-488ef73e29aa6cceca30574316a2e120/USER'
+config.Data.inputDataset = '/DoubleMuon/psiddire-ZMM2018B-27e65d5e1725982edc7b9dafe6d6836c/USER'
 config.Data.inputDBS = 'phys03'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10

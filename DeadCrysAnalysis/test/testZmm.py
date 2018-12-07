@@ -24,7 +24,8 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 1
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-'/store/data/Run2018B/SingleMuon/RAW-RECO/ZMu-PromptReco-v2/000/318/877/00000/CAD3EA19-287D-E811-8816-FA163ED18F5D.root',
+#'/store/data/Run2018B/SingleMuon/RAW-RECO/ZMu-PromptReco-v2/000/318/877/00000/CAD3EA19-287D-E811-8816-FA163ED18F5D.root',
+'/store/data/Run2018B/DoubleMuon/RAW/v1/000/317/080/00000/42719996-C062-E811-83F9-FA163EC2F360.root',
 ),
     secondaryFileNames = cms.untracked.vstring()
 )
@@ -60,7 +61,7 @@ process.RAWRECOoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('recoveryfilter'))
 )
-#process.RAWRECOoutput.outputCommands.append('drop *_*_*_RECO')
+process.RAWRECOoutput.outputCommands.append('drop *_*_*_RECO')
 
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '101X_dataRun2_Prompt_v9', '')
@@ -77,6 +78,6 @@ process.reconstruction_step = cms.Path(process.reconstruction)
 process.endjob_step = cms.EndPath(process.endOfProcess)
 process.RAWRECOoutput_step = cms.EndPath(process.RAWRECOoutput)
 
-process.schedule = cms.Schedule(process.raw2digi_step, process.reconstruction_step, process.zmuskim, process.recoveryfilter, process.endjob_step, process.RAWRECOoutput_step)
+process.schedule = cms.Schedule(process.raw2digi_step, process.reconstruction_step, process.recoveryfilter, process.endjob_step, process.RAWRECOoutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)

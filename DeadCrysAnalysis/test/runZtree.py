@@ -26,6 +26,7 @@ process.zskimtree = cms.EDAnalyzer(
     'ZSkimTree',
     #muonCollection = cms.InputTag('generalTracks'),
     muonCollection = cms.InputTag('muons'),
+    vertices     = cms.InputTag('offlinePrimaryVertices'),
     metCollection = cms.InputTag('pfMet'),
     )
 

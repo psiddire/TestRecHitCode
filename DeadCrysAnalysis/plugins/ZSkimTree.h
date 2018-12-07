@@ -17,7 +17,8 @@
 #include "DataFormats/TrackReco/interface/TrackFwd.h"
 #include "DataFormats/METReco/interface/PFMET.h"
 #include "DataFormats/METReco/interface/PFMETCollection.h"
-
+#include "DataFormats/VertexReco/interface/VertexFwd.h"
+#include "DataFormats/VertexReco/interface/Vertex.h"
 
 #include <vector>
 #include <string>
@@ -40,6 +41,7 @@ class ZSkimTree : public edm::one::EDAnalyzer<> {
 
 
   edm::EDGetTokenT<std::vector<reco::Muon> > muons_;
+  edm::EDGetTokenT<reco::VertexCollection> vtxToken_;
   edm::EDGetTokenT<reco::PFMETCollection> pfmets_;
 
   TTree *tree_;
